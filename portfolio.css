@@ -1,11 +1,9 @@
-
-
 .site-header {
-    width: 100%;
-    position: sticky !important;
-    top: 0px;
-    z-index: 100;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+     width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #f68e35;
 }
 
 .profile-image {
@@ -25,9 +23,72 @@
 
 }
 
-.profile-summary {
-    /* align-items: center; */
+
+
+@media (max-width: 768px) {
+    .profile {
+        flex-direction: column;
+        text-align: center;
+        padding: 3%;
+        /* gap: 20%; */
+
+    }
+
+    .profile-summary {
+        margin-top: 3%;
+    }
+
+    .education {
+        grid-template-columns: 1fr !important;
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .tab-pane {
+        
+        max-height: 200px;
+        overflow-y: auto;
+        /* white-space: nowrap; */
+        -webkit-overflow-scrolling: touch;
+        
+
+    }
+
+    .navbar-collapse {
+        flex-direction: column;
+        align-items: flex-end;
+        padding-top: 10px;
+    }
+
+    .navbar-nav {
+        width: 100%;
+    }
+
+    .navbar-collapse {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: #f68e35;
+        padding: 20px;
+        border-radius: 0 0 16px 16px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
+
+    .navbar-nav {
+        width: 100%;
+    }
+
+    .navbar-nav .nav-link {
+        display: block;
+        width: 100%;
+        padding: 14px 12px;
+        text-align: left;
+        border-radius: 10px;
+    }
 }
+
+
 
 .nav {
     width: 100%;
@@ -36,24 +97,37 @@
 }
 
 .navbar {
-    height: 80px;
+   min-height: 80px;
+    padding: 0 16px;
 }
 
 .header-resume {
-    border: none;
-    border-radius: 1rem;
+    background: white;
+    color: #f68e35 !important;
+    border-radius: 2rem;
+    padding: 10px 18px;
+    font-weight: 600;
 }
 
 
 .navbar-collapse {
-    display: flex !important;
+    flex-grow: 1;
 }
 
-.navbar-nav {
-    margin-left: auto;
-    /* margin: 2%; */
-    padding: 0px 60px;
+.navbar .container-fluid {
+    padding-right: 40px;
+    padding-left: 40px;
 }
+
+.navbar-collapse {
+    display: flex;
+    justify-content: space-between;
+    transition: height 0.3s ease;
+
+}
+
+
+
 
 
 .custom-navbar {
@@ -70,17 +144,31 @@
     margin-left: 2%;
 }
 
-.education {
-    height: 50vh;
+
+/* .education {
+    
     background-color: #FAD1AA;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 6%;
     margin: 4%;
-    /* padding: 10px; */
+    padding 40px 20px;
+    flex-wrap: wrap;
+    
 
+} */
+
+.education {
+    background-color: #FAD1AA;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin: 4%;
+    padding: 40px;
+    justify-items: center;
 }
+
 
 .card-one,
 .card-two,
@@ -90,6 +178,9 @@
     border-radius: 1rem;
     text-align: center;
     /* height: 2vh; */
+    width: 100%;
+    max-width: 280px;
+    height: 17rem;
 }
 
 .card-one:hover {
@@ -189,7 +280,7 @@
     /* font-weight: bold; */
 
 
-} 
+}
 
 /* .resume {
     text-decoration: none;
@@ -254,4 +345,3 @@
     margin-left: 20px;
     margin-right: 20px;
 }
-
